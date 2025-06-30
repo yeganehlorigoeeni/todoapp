@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-list',
   imports: [],
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './list.css'
 })
 export class List {
+  
 
 }
