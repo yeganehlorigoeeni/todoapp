@@ -25,11 +25,11 @@ private apiUrl = 'http://localhost:1337/api/tasks';
   }
 
 getNoteByDocumentId(documentId: string): Observable<any> {
-  return this.http.get('http://localhost:1337/api/notes?filters[documentId][$eq]=${documentId}');
+  return this.http.get('http://localhost:1337/api/tasks?filters[documentId][$eq]=${documentId}');
 }
 
 deleteNote(id: number): Observable<any> {
-  return this.http.delete('http://localhost:1337/api/notes/${id}');
+  return this.http.delete('http://localhost:1337/api/tasks/${id}');
 }
 
   
