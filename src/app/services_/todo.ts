@@ -24,8 +24,12 @@ private apiUrl = 'http://localhost:1337/api/tasks';
     } });
   }
 
-  deleteNote(id: number): Observable<any> {
-  return this.http.delete(`http://localhost:1337/api/tasks/${id}`);
+getNoteByDocumentId(documentId: string): Observable<any> {
+  return this.http.get('http://localhost:1337/api/notes?filters[documentId][$eq]=${documentId}');
+}
+
+deleteNote(id: number): Observable<any> {
+  return this.http.delete('http://localhost:1337/api/notes/${id}');
 }
 
   

@@ -11,7 +11,7 @@ export class TodoForSaveModel{
     }
 }
 
-    export class TOdoForListModel {
+    export class TodoForListModel {
         id:number;
         title:string;
         description:string;
