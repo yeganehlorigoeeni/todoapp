@@ -28,8 +28,9 @@ getNoteByDocumentId(documentId: string): Observable<any> {
   return this.http.get('http://localhost:1337/api/tasks?filters[documentId][$eq]=${documentId}');
 }
 
-deleteNote(id: number): Observable<any> {
-  return this.http.delete('http://localhost:1337/api/tasks/${id}');
+  deleteNote(id: string): Observable<any> {
+  console.log(id)
+  return this.http.delete(`http://localhost:1337/api/tasks/${id}`);
 }
 
   
