@@ -6,17 +6,17 @@
 
 <div class="notes-wrapper flex flex-col justify-center text-center items-center ">
     <div class=" notes-list flex flex-col  justify-center text-center gap-4 w-full max-w-4xl">
-        <div class="note-card flex flex-col border border-blue-300 rounded-2xl p-6 w-auto  bg-blue-300/20 gap-5 mt-3" *ngFor="let note of notes">
+        <div class="note-card flex flex-col border border-blue-300 rounded-2xl p-6 w-auto  bg-blue-300/20 gap-5 mt-3" *ngFor="let todo of todos">
             <div class="flex justify-between" >
-                <h3 class="text-blue-800 font-semibold" >{{note.title}}</h3>
-                <p class=" text-blue-800">{{note.date |date:'mediumDate'}}</p>
+                <h3 class="text-blue-800 font-semibold" >{{todo.title}}</h3>
+                <p class=" text-blue-800">{{todo.date |date:'mediumDate'}}</p>
 
             </div>
             <div class="flex justify-between">
-                <p class="text-blue-800/80">{{note.description}}</p>
+                <p class="text-blue-800/80">{{todo.description}}</p>
                 <div class="flex gap-3">
                     <button class="border border-blue-400 bg-blue-300 rounded-md text-sm w-11 hover:scale-110 transition-transform ease-in-out duration-300 hover:shadow-xl ">Edit</button>
-                    <button class="border border-blue-400 bg-blue-300 rounded-md text-sm w-11 hover:scale-110 transition-transform ease-in-out duration-300 hover:shadow-xl" (click)="deleteNote(note.documentId)">Delete</button>
+                    <button class="border border-blue-400 bg-blue-300 rounded-md text-sm w-11 hover:scale-110 transition-transform ease-in-out duration-300 hover:shadow-xl" (click)="deleteTode(todo.documentId)">Delete</button>
                 </div>
             </div>
 

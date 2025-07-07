@@ -13,25 +13,23 @@ import { Route, Router } from '@angular/router';
   styleUrl: './add.css'
 })
 export class Add {
-   note = {
-    title: '',
-    description: '',
-    date: ''
-  };
+   todo : TodoForSaveModel=new TodoForSaveModel()
 
   router:Router=inject(Router);
   constructor(private todoservice: TodoSrvice) {}
 
   saveNote() {
-    console.log('note value:', this.note);
-    if (!this.note.date) {
-  this.note.date = new Date().toISOString().substring(0, 10);
+    console.log('note value:', this.todo);
+    if (!this.todo.date) {
+  this.todo.date = new Date();
 }
-this.router.navigate(['/list']);
+
    
 
-this.todoservice.addNote(this.note).subscribe(() => {
-  this.note = { title: '', description: '', date: '' };
+this.todoservice.addTodo(this.todo).subscribe(() => {
+  this.todo=new TodoForSaveModel();
+  this.router.navigate(['/list']);
+  
 });
 
 }

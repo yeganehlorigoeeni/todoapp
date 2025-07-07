@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TodoSrvice } from '../../../../services_/todo';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { TodoForListModel } from '../../../../models_/todo.model';
 
 
 
@@ -14,24 +15,24 @@ import { RouterLink } from '@angular/router';
   styleUrl: './list.css'
 })
 export class List {
-   notes: any[] = [];
+   todos: any[] = [];
 
   constructor(private todoservice: TodoSrvice) {}
 
   ngOnInit() {
-    this.todoservice.getNotes().subscribe((res: any) => {
+    this.todoservice.getTodos().subscribe((res:any) => {
       console.log(':white_check_mark: notes response:', res);
-      this.notes = res.data;
-      console.log('notes', this.notes)
+      this.todos = res.data;
+      console.log('notes', this.todos)
 
     });
 
     
   }
 
-deleteNote(id: string) {
-  this.todoservice.deleteNote(id).subscribe(() => {
-    this.notes = this.notes.filter(n => n.documentId !== id);
+deleteTode(id: string) {
+  this.todoservice.deleteTodo(id).subscribe(() => {
+    this.todos = this.todos.filter(n => n.documentId !== id);
   });
 }
 
