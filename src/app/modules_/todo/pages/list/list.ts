@@ -29,13 +29,9 @@ export class List {
     
   }
 
-deleteNote(documentId: string) {
-  this.todoservice.getNoteByDocumentId(documentId).subscribe(res => {
-    const note = res.data[0];
-    const realId = note.id;
-    this.todoservice.deleteNote(realId).subscribe(() => {
-      this.notes = this.notes.filter(n => n.documentId !== documentId);
-    });
+deleteNote(id: string) {
+  this.todoservice.deleteNote(id).subscribe(() => {
+    this.notes = this.notes.filter(n => n.documentId !== id);
   });
 }
 
