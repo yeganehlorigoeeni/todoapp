@@ -31,11 +31,7 @@ export class List {
 
 deleteNote(id: string) {
   this.todoservice.deleteNote(id).subscribe(() => {
-<<<<<<< HEAD
     this.notes = this.notes.filter(n => n.documentId !== id);
-=======
-    // this.notes = this.notes.filter(n => n.documentId !== documentId);
->>>>>>> 5853c47a8b79cd0f23e80a53a56a7149a74df445
   });
 }
 
