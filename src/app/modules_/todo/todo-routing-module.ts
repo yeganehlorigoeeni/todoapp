@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoLanding } from './todo-landing';
 import { List } from './pages/list/list';
 import { Add } from './pages/add/add';
+import { Edit } from './pages/edit/edit';
 
 const routes: Routes = [
   {path:'', component:TodoLanding , children:[
    {path:'', redirectTo:'list' , pathMatch:'full'},
    {path:'add', component:Add},
-   {path:'list', component:List}
+   {path:'list', component:List},
+   {path:'edit/:documentId', component:Edit}
     
   ]}
 ];

@@ -15,7 +15,7 @@
             <div class="flex justify-between">
                 <p class="text-blue-800/80">{{todo.description}}</p>
                 <div class="flex gap-3">
-                    <button class="border border-blue-400 bg-blue-300 rounded-md text-sm w-11 hover:scale-110 transition-transform ease-in-out duration-300 hover:shadow-xl ">Edit</button>
+                    <button class="border border-blue-400 bg-blue-300 rounded-md text-sm w-11 hover:scale-110 transition-transform ease-in-out duration-300 hover:shadow-xl "[routerLink]="'/edit/' + todo.documentId">Edit</button>
                     <button class="border border-blue-400 bg-blue-300 rounded-md text-sm w-11 hover:scale-110 transition-transform ease-in-out duration-300 hover:shadow-xl" (click)="deleteTode(todo.documentId)">Delete</button>
                 </div>
             </div>

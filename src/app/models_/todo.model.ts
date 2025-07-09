@@ -16,12 +16,14 @@ export class TodoForSaveModel{
         title:string;
         description:string;
         date:Date;
+        documentId:string;
 
-        constructor(id:number=0, title:string='',description:string='',date:Date=new Date()) {
+        constructor(id:number=0, title:string='',description:string='',documentId:string='',date:Date=new Date()) {
             this.id=id;
             this.title=title;
             this.description=description;
             this.date=date;
+            this.documentId=documentId;
             
         }
     }
