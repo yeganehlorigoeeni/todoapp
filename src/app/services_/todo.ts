@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map,Observable } from 'rxjs';
-import { TodoForListModel, TodoForSaveModel } from '../models_/todo.model';
+import { GetTodoForUserDto, TodoForListModel, TodoForSaveModel } from '../models_/todo.model';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -15,7 +15,12 @@ private apiUrl = 'http://localhost:1337/api/todos';
 
 
   getTodos(): Observable<{data:TodoForListModel[]}> {
-    return this.http.get<{data:TodoForListModel[]}>(this.apiUrl);
+    return this.http.get<{data:TodoForListModel[]}>(this.apiUrl+"?populate=*");
+  }
+
+  
+  getTodosById(): Observable<{data:GetTodoForUserDto[]}> {
+    return this.http.get<{data:GetTodoForUserDto[]}>(this.apiUrl + '?populate=*');
   }
 
 

@@ -21,9 +21,12 @@ export class List {
 
   ngOnInit() {
     this.todoservice.getTodos().subscribe((res:any) => {
-      console.log(':white_check_mark: notes response:', res);
-      this.todos = res.data;
-      console.log('notes', this.todos)
+      const userID = localStorage.getItem("userID")
+      res.data.forEach((todo:any) => {
+        if (userID == todo.user.id.toString()) {
+          this.todos.push(todo)
+        }
+      });
 
     });
 
@@ -34,6 +37,13 @@ deleteTode(id: string) {
   this.todoservice.deleteTodo(id).subscribe(() => {
     this.todos = this.todos.filter(n => n.documentId !== id);
   });
+}
+
+
+getTodosByUserId() {
+
+
+
 }
 
   }

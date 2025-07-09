@@ -28,3 +28,16 @@ export class TodoForSaveModel{
         }
     }
    
+export interface GetTodoForUserDto {
+        id:number;
+        title:string;
+        description:string;
+        date:Date;
+        documentId:string;
+        
+        users : [
+            {
+                id:string
+            }
+        ]
+}
